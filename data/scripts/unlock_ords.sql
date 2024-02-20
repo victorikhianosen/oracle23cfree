@@ -1,0 +1,10 @@
+alter session set container=freebdb1;
+alter user APEX_PUBLIC_USER         identified by SysPassword1 account unlock;
+alter user APEX_LISTENER            identified by SysPassword1 account unlock;
+alter user APEX_REST_PUBLIC_USER    identified by SysPassword1 account unlock;
+alter user ORDS_PUBLIC_USER         identified by SysPassword1 account unlock;
+alter user anonymous account unlock;
+alter user apex_public_user profile apex_profile ;
+alter user apex_rest_public_user profile apex_profile ;
+alter user apex_listener profile apex_profile ;
+alter user ords_public_user profile apex_profile ;

@@ -1,0 +1,14 @@
+[Unit]
+Description=Road Runner PHP Application Server 3.o
+After=network.target
+[Service]
+User=root
+Group=root
+WorkingDirectory=/home/jonathan/Projects/lumen-swift-parser
+ExecStart=/home/jonathan/Projects/lumen-swift-parser/rr serve
+Restart=always
+RestartSec=5s
+#RuntimeMaxSec=3600
+
+[Install]
+WantedBy=multi-user.target

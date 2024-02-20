@@ -1,0 +1,14 @@
+[Unit]
+Description=Oracle ORDS 23.4
+After=network.target
+[Service]
+User=jonathan
+Group=jonathan
+WorkingDirectory=/home/jonathan/Projects/ords
+ExecStart=/home/jonathan/oracle23cfree/data/ords-23.4/bin/ords  --config /home/jonathan/Projects/ords/config serve
+Restart=always
+RestartSec=5s
+#RuntimeMaxSec=3600
+
+[Install]
+WantedBy=multi-user.target

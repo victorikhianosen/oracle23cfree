@@ -1,0 +1,11 @@
+run {
+configure retention policy to redundancy 1;
+         configure controlfile autobackup format for device type disk clear;
+         configure controlfile autobackup on;
+         #sql "create pfile=''/host/scripts/init_pfile.ora'' from spfile";
+         backup current controlfile;
+         #backup as copy current controlfile format '/host/scripts/control.ctl';
+         backup as backupset device type disk database include current controlfile;
+         #configure controlfile autobackup on;
+         delete noprompt obsolete;
+}
